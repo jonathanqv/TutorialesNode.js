@@ -1,0 +1,74 @@
+doctype html
+html(lang='en')
+  head
+    title Gidahatari
+    meta(charset='utf-8')
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    script(src="https://d3js.org/d3.v4.min.js")
+
+  body
+    //p This is a paragraph
+    script.
+      //d3.select("p").text("Hello World");
+      //d3.select("body")
+        //.append("p")
+        //.style("color", "red")
+        //.text("Hi");
+      var dataArray = [10,20,40, 60];
+      var width = 500;
+      var height = 500;
+      
+      var widthScale = d3.scaleLinear()
+                  .domain([0,60])
+                  .range([0, width]);
+                  
+      var color = d3.scaleLinear()
+                  .domain([0,60])
+                  .range(["red", "blue"]);
+      
+      var axis = d3.axisBottom()
+                  .ticks(5)
+                  .scale(widthScale);
+
+      var canvas = d3.select("body")
+                  .append("svg")
+                  .attr("width",width)
+                  .attr("height", height)
+                  .append("g") //This creates a group
+                  .attr("transform", "translate(20,20)")//move, rotate
+                  
+      var bars = canvas.selectAll("rect")
+                  .data(dataArray)
+                  .enter()
+                    .append("rect")
+                    .attr("width", function (d) {return widthScale(d);})
+                    .attr("height", 50)
+                    //.attr("fill", "red")
+                    .attr("fill", function (d){return color(d)})
+                    .attr("y", function(d, i){return i *100})
+
+      canvas.append("g")
+        .attr("transform", "translate(0,380)")
+        .call(axis);
+      /*            
+      var circle = canvas.append("circle")
+                  .attr("cx", 250)
+                  .attr("cy", 250)
+                  .attr("r",50)
+                  .attr("fill", "red");
+      
+      var rect= canvas.append("rect")
+                  .attr("width", 100)
+                  .attr("height", 50);
+                  
+      var line = canvas.append("line")
+                  .attr("x1", 0)
+                  .attr("y1", 100)
+                  .attr("x2", 400)
+                  .attr("y2", 400)
+                  .attr("stroke", "green")
+                  .attr("stroke-width", 10)
+      */
+      
+                
+      

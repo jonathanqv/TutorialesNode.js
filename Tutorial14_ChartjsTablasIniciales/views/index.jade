@@ -1,0 +1,178 @@
+doctype html
+html(lang='en')
+  head
+    title Gidahatari
+    meta(charset='utf-8')
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js')
+
+  body
+
+      .col-md-4
+        h2.text-center Chart.js Bar Chart Demo
+        canvas#myChart
+        script.
+            
+          var ctx = document.getElementById('myChart').getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+              datasets: [{
+                label: 'apples',
+                data: [12, 19, 3, 17, 6, 3, 7],
+                backgroundColor: "rgba(26,129,102,0.2)",
+                borderColor: "#3cba9f",
+                //fill:false
+              }, {
+                label: 'oranges',
+                data: [2, 29, 5, 5, 2, 3, 10],
+                backgroundColor: "rgba(255,153,0,0.2)",
+                borderColor: "rgba(179,11,198,1)",
+                //fill:false
+              }]
+            }
+          });
+        
+        h2.text-center Chart.js polarArea Chart Demo
+        canvas#myChart4
+        script.
+          var ctx = document.getElementById('myChart4').getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'polarArea',
+            data: {
+              labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+              datasets: [{
+                label: 'apples',
+                data: [12, 19, 3, 17, 6, 3, 7],
+                backgroundColor: [
+                  "#2ecc71",
+                  "#3498db",
+                  "#95a5a6",
+                  "#9b59b6",
+                  "#f1c40f",
+                  "#e74c3c",
+                  "#34495e"
+                ]
+              }]
+            }  
+          });
+
+      .col-md-4
+        h2.text-center Chart.js Line Chart Demo
+        canvas#myChart2
+        script.
+                      
+          var ctx = document.getElementById('myChart2').getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+              datasets: [{
+                label: 'apples',
+                data: [12, 19, 3, 17, 6, 3, 7],
+                backgroundColor: "rgba(26,129,102,0.2)",
+                borderColor: "#3cba9f",
+                fill:false
+              }, {
+                label: 'oranges',
+                data: [2, 29, 5, 5, 2, 3, 10],
+                backgroundColor: "rgba(255,153,0,0.2)",
+                borderColor: "rgba(179,11,198,1)",
+              }]
+            }
+          });
+          
+        h2.text-center Chart.js Pie Chart Demo
+        canvas#myChart5
+        script.
+          var ctx = document.getElementById('myChart5').getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+              datasets: [{
+                label: 'apples',
+                data: [12, 19, 3, 17, 6, 3, 7],
+                backgroundColor: [
+                  "#2ecc71",
+                  "#3498db",
+                  "#95a5a6",
+                  "#9b59b6",
+                  "#f1c40f",
+                  "#e74c3c",
+                  "#34495e"
+                ]
+              }]
+            }  
+          });  
+             
+      .col-md-4
+        h2.text-center Chart.js Radar Chart Demo
+        canvas#myChart3
+        script.
+          var ctx = document.getElementById('myChart3').getContext('2d');
+          var myChart = new Chart(ctx, {
+            //type: 'line',
+            //type: 'bar',
+            type: 'radar',
+            data: {
+              labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+              datasets: [{
+                label: 'apples',
+                data: [12, 19, 3, 17, 6, 3, 7],
+                backgroundColor: "rgba(26,129,102,0.2)",
+                borderColor: "#3cba9f",
+                //fill:false
+              }, {
+                label: 'oranges',
+                data: [2, 29, 5, 5, 2, 3, 10],
+                backgroundColor: "rgba(255,153,0,0.2)",
+                borderColor: "rgba(179,11,198,1)",
+                //fill:false
+              }]
+            }
+          });
+          
+        h2.text-center Chart.js Doughnut Chart Demo
+        canvas#myChart6
+        script.
+          var ctx = document.getElementById('myChart6').getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+              labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
+              datasets: [{
+                label: 'apples',
+                data: [12, 19, 3, 17, 6, 3, 7],
+                backgroundColor: [
+                  "#2ecc71",
+                  "#3498db",
+                  "#95a5a6",
+                  "#9b59b6",
+                  "#f1c40f",
+                  "#e74c3c",
+                  "#34495e"
+                ]
+                //fill:false
+              }, {
+                label: 'oranges',
+                data: [2, 29, 5, 5, 2, 3, 10],
+                backgroundColor: [
+                  "#2ecc71",
+                  "#3498db",
+                  "#95a5a6",
+                  "#9b59b6",
+                  "#f1c40f",
+                  "#e74c3c",
+                  "#34495e"
+                ],
+                borderColor: "rgba(179,11,198,1)",
+                //fill:false
+              }]
+            }
+          });  
+          
+
+      
+      
